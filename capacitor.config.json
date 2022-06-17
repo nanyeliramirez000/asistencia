@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "banorte-movil",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

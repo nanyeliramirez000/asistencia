@@ -1,0 +1,7 @@
+{
+  "name": "banorte-movil",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
