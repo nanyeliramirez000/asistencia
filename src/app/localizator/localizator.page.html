@@ -1,0 +1,50 @@
+<ion-header class="ion-no-border" no-border>
+  <ion-toolbar mode="md">
+    <div class="kb-row">
+      <div>
+        <button
+          [routerLink]="['/iniciojjzmqpjzio']"
+          style="background-color: transparent; color: #fff"
+        >
+          <ion-icon
+            style="font-size: 30px"
+            name="chevron-back-outline"
+          ></ion-icon>
+        </button>
+      </div>
+
+      <div class="title">
+        <p>Geolocalización</p>
+        <!-- <p>GEOLOCALIZACIÓN BANORTE</p> -->
+      </div>
+
+      <div></div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="ion-text-center">
+    <ion-row>
+      <ion-col size="12">
+        <ion-card class="aviso">
+          <ion-card-content class="aviso">
+            <div class="head">
+              <img
+                src="{{API_URL}}/assets/img/img_localizator_error.png"
+                alt=""
+                srcset=""
+              />
+              <p>
+                <strong style="color: #4f585f; font-size: 18px"
+                  >El servicio de geolocalización no esta disponible en estos
+                  momentos</strong
+                >
+              </p>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

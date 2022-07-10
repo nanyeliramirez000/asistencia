@@ -1,0 +1,21 @@
+#superpuesto{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+    width: 100%;
+    background-color: white;
+    // background-color: rgb(28, 28, 28);
+}
+
+#divSplash{
+    --background: none;
+    // background: url("/assets/img/splash.png") no-repeat center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

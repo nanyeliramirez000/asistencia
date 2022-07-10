@@ -1,0 +1,28 @@
+.container{
+    text-align:  center;
+}
+
+.container p{
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+} 
+
+.container .title p{
+    font-size: 18px;
+    font-weight: 600;
+} 
+
+.container .subtitle{
+    padding-top: 20px
+}
+
+ion-grid{
+    height: 100%;
+}
+ion-row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+}

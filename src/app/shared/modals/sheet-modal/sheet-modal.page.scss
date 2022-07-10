@@ -1,0 +1,264 @@
+ion-content {
+    border-radius: 15px 15px 0px 0px;
+    --border-radius: 15px 15px 0px 0px;
+}
+
+
+// #region INFO
+.info .header{
+    background-color: #fff
+}
+
+.info .body{
+    height: 70%;
+    background-color: #ebf0f3
+}
+
+
+.info ion-icon.closed{
+    font-size: 25px;
+    color: #5c6670;
+}
+
+.info .close{
+    text-align: right !important; 
+    margin-top: 10px; 
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.info .header .title{
+    margin-left: 15px;
+    margin-bottom: 20px;
+}
+
+.info .title .info>img{
+    font-size: 30px;
+    color: #fc611f;
+}
+
+.info .title .infoText{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.info .body .options{
+    padding-top: 30px;
+}
+
+
+.info .body .options .optIcon{
+    font-size: 24px;
+    margin-left: 10px;
+    margin-right: 15px;
+    color: #5c6670;
+}
+
+.info .body .options .optText{
+    font-weight: 600;
+    font-size: 16px;
+    color: #5c6670;
+}
+
+.info .body .options .optSubText{
+    font-size: 14px;
+    padding-left: 47px;
+    color: #5c6670
+}
+// #endregion
+
+// #region CALL
+.call .header{
+    background-color: #fff
+}
+
+.call .body{
+    height: 80%;
+    background-color: #ebf0f3
+}
+
+.call ion-icon.closed{
+    font-size: 25px;
+    color: #5c6670;
+}
+
+.call .close{
+    text-align: right !important; 
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.call .header .title{
+    margin-left: 10px;
+    margin-bottom: 20px;
+    padding-top: 2px;
+}
+
+.call .body{
+    padding-top: 50px;
+}
+
+.call .header .title{
+    font-size: 18px;
+    color: #323f48;
+    font-weight: bold;
+    
+}
+
+.call .header .subheader{
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.call ion-card{
+    border-radius: 12.5px;
+    margin-inline-start: 6px;
+    margin-inline-end: 6px;
+}
+
+.call .body ion-card .aviso p{
+    font-size: 16.5px;
+}
+
+.call .body ion-card .divide{
+    border-bottom: 1px solid #b6bbbd;
+    margin: 25px 0px 15px 0px;
+}
+
+.call .body ion-card .number{
+    font-size: 17px;
+    color: #323f48;
+    font-weight: 600;
+}
+// #endregion
+
+// #region CHAT
+.chat .header{
+    background-color: #fff
+}
+
+.chat .body{
+    height: 80%;
+    background-color: #ebf0f3
+}
+
+.chat ion-icon.closed{
+    font-size: 25px;
+    color: #5c6670;
+}
+
+.chat .close{
+    text-align: right !important; 
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.chat .header .title{
+    margin-left: 10px;
+    margin-bottom: 20px;
+    padding-top: 2px;
+}
+
+.chat .body{
+    padding-top: 50px;
+}
+
+.chat .header .title{
+    font-size: 18px;
+    color: #323f48;
+    font-weight: bold;
+    
+}
+
+.chat .header .subheader{
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.chat ion-card{
+    border-radius: 12.5px;
+    margin-inline-start: 6px;
+    margin-inline-end: 6px;
+}
+
+.chat .body ion-card .aviso p{
+    font-size: 16.5px;
+}
+
+.chat .body ion-card .divide{
+    border-bottom: 1px solid #b6bbbd;
+    margin: 25px 0px 15px 0px;
+}
+
+.chat .body ion-card .number{
+    font-size: 17px;
+    color: #323f48;
+    font-weight: 600;
+}
+// #endregion
+
+// #region EMAIL
+.email .header{
+    background-color: #fff
+}
+
+.email .body{
+    height: 80%;
+    background-color: #ebf0f3
+}
+
+.email ion-icon.closed{
+    font-size: 25px;
+    color: #5c6670;
+}
+
+.email .close{
+    text-align: right !important; 
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.email .header .title{
+    margin-left: 10px;
+    margin-bottom: 20px;
+    padding-top: 2px;
+}
+
+.email .body{
+    padding-top: 50px;
+}
+
+.email .header .title{
+    font-size: 18px;
+    color: #323f48;
+    font-weight: bold;
+    
+}
+
+.email .header .subheader{
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.email ion-card{
+    border-radius: 12.5px;
+    margin-inline-start: 6px;
+    margin-inline-end: 6px;
+}
+
+.email .body ion-card .aviso p{
+    font-size: 16.5px;
+}
+
+.email .body ion-card .divide{
+    border-bottom: 1px solid #b6bbbd;
+    margin: 25px 0px 15px 0px;
+}
+
+.email .body ion-card .number{
+    font-size: 17px;
+    color: #323f48;
+    font-weight: 600;
+}
+// #endregion
+

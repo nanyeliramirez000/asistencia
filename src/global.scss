@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,3 +24,105 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: text-security-disc;
+  // src: url("https://raw.githubusercontent.com/noppa/text-security/master/dist/text-security-disc.woff");
+  src: url("/assets/fonts/text-security-disc.woff");
+}
+
+.sheet-modal {
+  --backdrop-opacity: 1;
+  --overflow: hidden;
+  --overflow-y: hidden;
+
+  &::part(content) {
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 32%);
+  }
+}
+
+.loading-modal {
+  width: 100%;
+  height: 100%;
+  background-color: #323f485b !important;
+  --background: #323f485b !important;
+  --overflow: hidden;
+  --overflow-y: hidden;
+
+  .modal-wrapper {
+    background-color: #323f485b !important;
+    --background: #323f485b !important;
+  }
+}
+// .loading-modal {
+//   width: 100%;
+//   height: 100%;
+//   background-color: #323f4852 !important;
+//   --background: #323f4852  !important;
+//   --overflow: hidden;
+//   --overflow-y: hidden;
+
+//   .modal-wrapper {
+//     background-color:#323f4852  !important;
+//     --background: #323f4852  !important;
+//   }
+// }
+
+.focus-modal {
+  width: 100%;
+  height: 100%;
+  // background-color:rgba(0, 0, 0, 0.3) !important;
+  // rgba(0, 0, 0, 0)
+  background-color: transparent !important;
+  --background: transparent !important;
+  --overflow: hidden;
+  --overflow-y: hidden;
+
+  .modal-wrapper {
+    background-color: transparent !important;
+    --background: transparent !important;
+  }
+}
+
+.dual-modal {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 0px !important;
+  padding-top: 0px !important;
+  // background-color:rgba(0, 0, 0, 0.3) !important;
+  background-color: #1d345334 !important;
+  --background: #1d345334 !important;
+  --overflow: hidden;
+  --overflow-y: hidden;
+
+  .modal-wrapper {
+    background-color: #1d345334 !important;
+    --background: #1d345334 !important;
+  }
+}
+
+.info-modal {
+  width: 100;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  --background: rgba(0, 0, 0, 0.3) !important;
+
+  .modal-wrapper {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    --background: rgba(0, 0, 0, 0.3) !important;
+  }
+}
+
+ion-modal .ion-page {
+  border-radius: inherit;
+}
+
+.kbproject {
+  font-family: text-security-disc;
+  -webkit-text-security: disc;
+  -moz-text-security: circle;
+  color: rgba(114, 114, 114, 1);
+}

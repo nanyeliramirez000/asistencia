@@ -1,0 +1,403 @@
+<ion-grid class="ion-text-center">
+  <ion-row col-12 no-padding>
+    <ion-col size="12">
+      <!-- #region LOGIN -->
+      <div *ngIf="current === 'login'" class="login">
+        <div class="img">
+          <img width="100" src="{{API_URL}}/assets/img/icon_refresh.png" />
+        </div>
+
+        <br />
+        <br />
+
+        <ion-card>
+          <ion-card-content>
+            <div style="margin-top: 10px" class="title">
+              <p>Importante</p>
+            </div>
+
+            <div class="divide"></div>
+
+            <div class="first-aviso">
+              <p>
+                Los datos que ingresaste no son correctos. Por favor, verifica
+                la información e Inténtalo de nuevo.
+              </p>
+            </div>
+
+            <br />
+
+            <div class="second-aviso">
+              <p>¡Te esperamos!</p>
+            </div>
+
+            <br />
+            <br />
+
+            <ion-button (click)="closeModal()" expand="block" class="btn">
+              Usar otra tarjeta
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <!-- #endregion -->
+
+      <!-- #region REGISTER -->
+      <div *ngIf="current === 'register'" class="register">
+        <ion-card>
+          <ion-card-content>
+            <div (click)="closeModal()" class="back">
+              <img width="35" src="{{API_URL}}/assets/img/img_arrow_left.png" />
+            </div>
+
+            <div class="img">
+              <img width="90" src="{{API_URL}}/assets/img/icon_register.png" />
+            </div>
+
+            <div style="margin-top: 15px" class="title">
+              <p>
+                Bienvenido a nuestro módulo de contratación de cuentas Banorte
+              </p>
+            </div>
+
+            <div class="divide"></div>
+
+            <div class="first-aviso">
+              <p>
+                Puedes ir a una sucursal o nuestro sitio web para
+                <strong>obtener una cuenta Banorte</strong> en minutos, solo
+                necesitas:
+              </p>
+            </div>
+
+            <br />
+
+            <div class="kbwrow">
+              <div class="txt">
+                <img width="13" src="{{API_URL}}/assets/img/point.png" />
+                Tu identificacion oficial vigente
+                <strong>con domicilio actual y completo.</strong>
+              </div>
+              <br />
+              <div class="txt">
+                <img width="13" src="{{API_URL}}/assets/img/point.png" />
+                Telefono celular con camara. (Te tomaremos una foto y un video).
+              </div>
+            </div>
+
+            <div class="second-aviso">
+              <p>
+                Realiza tu contratación en linea y recibe tu tarjeta donde
+                quieras.
+              </p>
+            </div>
+
+            <br />
+            <br />
+
+            <ion-button (click)="closeModal()" expand="block" class="btn">
+              Entiendo
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <!-- #endregion -->
+
+      <!-- #region CAMERA -->
+      <div *ngIf="current === 'camera'" class="camera">
+        <!-- <div class="img">
+          <img width="90" src="{{API_URL}}/assets/img/icon_camera.png" />
+        </div> -->
+        <!-- <br>
+        <br> -->
+
+        <ion-card>
+          <ion-card-content>
+            <!-- <div (click)="closeModal()" class="back">
+              <img width="35" src="{{API_URL}}/assets/img/img_arrow_left.png" />
+            </div> -->
+
+            <div style="margin-top: 15px" class="title">
+              <p>Importante</p>
+            </div>
+
+            <div class="divide"></div>
+
+            <div class="first-aviso">
+              <p>
+                Para hacer uso de esta funcionalidad debes inicia sesión y
+                activar el permiso de la cámara para esta aplicación desde los
+                ajustes.
+              </p>
+            </div>
+
+            <br />
+            <br />
+
+            <ion-button (click)="closeModal()" expand="block" class="btn">
+              Entiendo
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <!-- #endregion -->
+
+      <!-- #region AVISO CONTACT -->
+      <div *ngIf="current === 'aviso-contact'" class="aviso-contact">
+        <ion-card>
+          <ion-card-content>
+            <div class="img header-img">
+              <img
+                width="90"
+                src="{{API_URL}}/assets/img/icon_contact_info_off.png"
+              />
+            </div>
+
+            <div style="margin-top: 10px" class="title">
+              <p>Actualiza tus datos de contacto</p>
+            </div>
+
+            <div class="divide"></div>
+
+            <div class="first-aviso">
+              <p>
+                Tu seguridad es nuestra prioridad. Necesitamos que
+                <strong>actualices</strong> tu informacion de
+                <strong>contacto.</strong>
+              </p>
+            </div>
+
+            <br />
+            <br />
+
+            <div id="opts">
+              <div class="rrow">
+                <div style="height: 30px; width: 30px" class="rrow-img">
+                  <img
+                    width="30"
+                    src="{{API_URL}}/assets/img/img_bsc_icon_user_on.png"
+                  />
+                </div>
+                <div class="rrow-txt">
+                  Nombre completo.<strong class="invisible"> connam.</strong>
+                </div>
+              </div>
+              <!-- 29 -->
+              <div class="rrow">
+                <div style="height: 28px; width: 28px" class="rrow-img">
+                  <img
+                    width="28"
+                    src="{{API_URL}}/assets/img/img_telephone_on.png"
+                  />
+                </div>
+                <div class="rrow-txt">
+                  Telefono celular actual.<strong class="invisible">
+                    con.</strong
+                  >
+                </div>
+              </div>
+
+              <div class="rrow">
+                <div style="height: 25px; width: 25px" class="rrow-img">
+                  <img
+                    width="25"
+                    src="{{API_URL}}/assets/img/img_email_on.png"
+                  />
+                </div>
+                <div class="rrow-txt">
+                  Correo eletronico actual.<strong class="invisible">
+                    em</strong
+                  >
+                </div>
+              </div>
+
+              <!-- <div class="rrow">
+                <div style="height:30px;width:30px" class="rrow-img">
+                  <img width="30" src="{{API_URL}}/assets/img/img_address_on.png" />
+                </div>
+                <div class="rrow-txt">
+                  Direccion y domicilio actual.<strong class="invisible">.</strong>
+                </div>
+              </div> -->
+            </div>
+
+            <br />
+            <br />
+
+            <ion-button (click)="closeModal()" expand="block" class="btn">
+              Comenzar
+            </ion-button>
+            <br />
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <!-- #endregion -->
+
+      <!-- #region AVISO CARD -->
+      <div *ngIf="current === 'aviso-card'" class="aviso-card">
+        <ion-card>
+          <ion-card-content>
+            <div class="img header-img">
+              <img
+                width="90"
+                src="{{API_URL}}/assets/img/icon_update_card_off.png"
+              />
+            </div>
+
+            <div style="margin-top: 15px" class="title">
+              <p>Información importante</p>
+            </div>
+
+            <div class="divide"></div>
+
+            <div style="margin-top: 10px" class="title">
+              <p>Sincronización de token</p>
+            </div>
+
+            <div class="first-aviso">
+              <p>
+                Por seguridad debe <strong>sincronizar</strong> su token antes
+                de continuar y tener acceso a su cuenta.
+              </p>
+            </div>
+
+            <br />
+
+            <div id="opts">
+              <div style="padding-left: 3px" class="rrow">
+                <div style="height: 35px; width: 35px" class="rrow-img">
+                  <img width="35" src="{{API_URL}}/assets/img/kb-card.png" />
+                </div>
+                <div class="rrow-txt">
+                  Datos tarjeta.<strong class="invisible"> con.</strong>
+                </div>
+              </div>
+
+              <div class="rrow">
+                <div style="height: 30px; width: 30px" class="rrow-img">
+                  <img width="30" src="{{API_URL}}/assets/img/img_nip_on.png" />
+                </div>
+                <div class="rrow-txt">
+                  NIP de cajero.<strong class="invisible"> em</strong>
+                </div>
+              </div>
+            </div>
+
+            <br />
+            <br />
+
+            <ion-button (click)="closeModal()" expand="block" class="btn">
+              Sincronizar
+            </ion-button>
+            <br />
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <!-- #endregion -->
+
+      <!-- #region CHANGE-PASSWORD -->
+      <div *ngIf="current === 'password'" class="register">
+        <ion-card>
+          <ion-card-content>
+            <div style="margin-top: 15px" class="title">
+              <p>Cambia tu contraseña</p>
+            </div>
+
+            <div class="divide"></div>
+
+            <div class="first-aviso">
+              <p>
+                Para cambiar tu contraseña de forma rapida y segura sigue los
+                siguientes <strong>pasos</strong> acontinuacion:
+              </p>
+            </div>
+
+            <br />
+
+            <div class="kbwrow">
+              <div class="txt">
+                <img width="13" src="{{API_URL}}/assets/img/point.png" />
+                Ingresa a la configuracion y elige la opcion cambiar contraseña.
+              </div>
+              <br />
+              <div class="txt">
+                <img width="13" src="{{API_URL}}/assets/img/point.png" />
+                Ingresa tu contraseña actual y selecciona
+                <strong>Continuar.</strong>
+              </div>
+            </div>
+
+            <div class="second-aviso">
+              <p>
+                Ingresa tu nueva contraseña, selecciona siguiente y
+                <strong>¡Listo!.</strong>
+              </p>
+            </div>
+
+            <br />
+            <br />
+
+            <ion-button (click)="closeModal()" expand="block" class="btn">
+              Entiendo
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <!-- #endregion -->
+
+      <!-- #region REGISTER -->
+      <div *ngIf="current === 'success'" class="success">
+        <ion-card>
+          <ion-card-content>
+            <div class="img">
+              <img width="60" src="{{API_URL}}/assets/img/success.png" />
+            </div>
+
+            <div style="margin-top: 15px" class="title">
+              <p>¡Verificación completada!</p>
+            </div>
+
+            <!-- <div class="divide"></div> -->
+
+            <div class="first-aviso">
+              <p>
+                Banorte revisará tus datos lo antes posible. Cuando se hayan
+                verificado tus datos te enviaremos una notificación por correo
+                electrónico.
+              </p>
+            </div>
+
+            <br />
+
+            <div class="kbwrow">
+              <div class="txt">
+                <img width="13" src="{{API_URL}}/assets/img/check.png" />
+                Datos de contacto <strong>actualizados</strong> correctamente.
+              </div>
+              <br />
+              <div class="txt">
+                <img width="13" src="{{API_URL}}/assets/img/check.png" />
+                Sincronización de token completada correctamente.
+              </div>
+            </div>
+
+            <div class="second-aviso">
+              <p>
+                Puedes acceder y seguir usando tu cuenta, Gracias por
+                preferirnos.
+              </p>
+            </div>
+
+            <br />
+            <br />
+
+            <ion-button (click)="salir()" expand="block" class="btn">
+              Terminar
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <!-- #endregion -->
+    </ion-col>
+  </ion-row>
+</ion-grid>

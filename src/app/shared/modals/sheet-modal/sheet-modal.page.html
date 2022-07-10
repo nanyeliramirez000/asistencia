@@ -1,0 +1,254 @@
+<!-- #region INFO -->
+<ion-content *ngIf="current === 'info'" class="info">
+  <div class="header">
+    <div (click)="close()" class="close">
+      <ion-icon size="50" class="closed" name="close-circle"></ion-icon>
+    </div>
+
+    <ion-row class="title" col-12 no-padding>
+      <div class="info" style="margin-right: 5px">
+        <ion-icon
+          style="color: #fc611f; font-size: 23px"
+          name="information-circle"
+        ></ion-icon>
+      </div>
+
+      <div style="margin-bottom: 3px" class="infoText">Importante</div>
+    </ion-row>
+  </div>
+
+  <div class="body">
+    <div class="options">
+      <ion-row>
+        <ion-icon class="optIcon" name="card"></ion-icon>
+        <div class="optText">Número de tarjeta de Débito o Crédito</div>
+      </ion-row>
+
+      <div class="optSubText">
+        <span>Captura los 16 dígitos que aparecen en tu tarjeta.</span>
+      </div>
+
+      <!-- <ion-row>
+        <ion-icon class="optIcon" style="visibility:hidden" name="card"></ion-icon>
+        <div class="optSubText">
+          <span>Captura los 16 dígitos que aparecen en tu tarjeta.</span>
+        </div>
+      </ion-row> -->
+    </div>
+
+    <div class="options">
+      <ion-row>
+        <ion-icon class="optIcon" name="card"></ion-icon>
+        <div class="optText">Número de cuenta</div>
+      </ion-row>
+
+      <div class="optSubText">
+        <span>Captura los 10 dígitos que aparecen en tu estado.</span>
+      </div>
+
+      <!-- <ion-row>
+        <ion-icon class="optIcon" style="visibility:hidden" name="card"></ion-icon>
+        
+        <div class="optSubText">
+          <span>Captura los 10 dígitos que aparecen en tu estado.</span>
+        </div>
+      </ion-row> -->
+    </div>
+  </div>
+</ion-content>
+<!-- #endregion -->
+
+<!-- #region CALL -->
+<ion-content *ngIf="current === 'call'" class="call">
+  <div class="header">
+    <ion-row style="margin-top: 7px" col-12 no-padding>
+      <ion-row class="subheader">
+        <ion-icon
+          style="color: #5c6670; font-size: 23px"
+          name="call"
+        ></ion-icon>
+        <div class="title">Llamada</div>
+      </ion-row>
+
+      <ion-col class="ion-no-padding" style="text-align: right !important">
+        <div (click)="close()" class="close">
+          <ion-icon size="50" class="closed" name="close-circle"></ion-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <div class="body">
+    <ion-card>
+      <ion-card-content>
+        <div class="aviso">
+          <p>
+            Desde cualquier parte de la República Mexicana y cualquier país.
+          </p>
+        </div>
+
+        <div class="divide"></div>
+
+        <div>
+          <ion-row style="margin-top: 7px" col-12 no-padding>
+            <ion-row>
+              <div class="number">+52 (81) 8156 9600</div>
+            </ion-row>
+
+            <ion-col
+              class="ion-no-padding"
+              style="text-align: right !important"
+            >
+              <ion-icon
+                style="color: #5c6670; font-size: 23px"
+                name="call"
+              ></ion-icon>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+<!-- #endregion -->
+
+<!-- #region CHAT -->
+<ion-content *ngIf="current === 'chat'" class="chat">
+  <div class="header">
+    <ion-row style="margin-top: 7px" col-12 no-padding>
+      <ion-row class="subheader">
+        <ion-icon
+          style="color: #5c6670; font-size: 23px"
+          name="chatbubbles"
+        ></ion-icon>
+        <div class="title">Chat</div>
+      </ion-row>
+
+      <ion-col class="ion-no-padding" style="text-align: right !important">
+        <div (click)="close()" class="close">
+          <ion-icon size="50" class="closed" name="close-circle"></ion-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <div class="body">
+    <ion-card>
+      <ion-card-content>
+        <div style="text-align: center">
+          <img
+            src="{{API_URL}}/assets/img/img_bsc_icono_centro_contacto.png"
+            width="100"
+            alt=""
+          />
+        </div>
+
+        <div class="divide"></div>
+
+        <div>
+          <ion-row style="margin-top: 7px" col-12 no-padding>
+            <ion-row>
+              <div class="number">+52 (81) 8156 9600</div>
+            </ion-row>
+
+            <ion-col
+              class="ion-no-padding"
+              style="text-align: right !important"
+            >
+              <ion-icon
+                style="color: #5c6670; font-size: 23px"
+                name="chatbubbles"
+              ></ion-icon>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+<!-- #endregion -->
+
+<!-- #region EMAIL -->
+<ion-content *ngIf="current === 'email'" class="email">
+  <div class="header">
+    <ion-row style="margin-top: 7px" col-12 no-padding>
+      <ion-row class="subheader">
+        <ion-icon style="color: #5c6670; font-size: 23px" name="at"></ion-icon>
+        <div class="title">Envíanos un correo</div>
+      </ion-row>
+
+      <ion-col class="ion-no-padding" style="text-align: right !important">
+        <div (click)="close()" class="close">
+          <ion-icon size="50" class="closed" name="close-circle"></ion-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <div class="body">
+    <ion-card>
+      <ion-card-content>
+        <div style="text-align: center">
+          <img
+            src="{{API_URL}}/assets/img/img_bancapyme.png"
+            width="100"
+            alt=""
+          />
+        </div>
+
+        <div class="divide"></div>
+
+        <div class="kbrows">
+          <ion-row style="margin-top: 7px" col-12 no-padding>
+            <ion-row>
+              <div class="number">contacto@banorte.com</div>
+            </ion-row>
+
+            <ion-col
+              class="ion-no-padding"
+              style="text-align: right !important"
+            >
+              <ion-icon
+                style="color: #5c6670; font-size: 23px"
+                name="mail"
+              ></ion-icon>
+            </ion-col>
+          </ion-row>
+
+          <ion-row style="margin-top: 7px" col-12 no-padding>
+            <ion-row>
+              <div class="number">soporte@banorte.com</div>
+            </ion-row>
+
+            <ion-col
+              class="ion-no-padding"
+              style="text-align: right !important"
+            >
+              <ion-icon
+                style="color: #5c6670; font-size: 23px"
+                name="mail"
+              ></ion-icon>
+            </ion-col>
+          </ion-row>
+
+          <ion-row style="margin-top: 7px" col-12 no-padding>
+            <ion-row>
+              <div class="number">asistencia@banorte.com</div>
+            </ion-row>
+
+            <ion-col
+              class="ion-no-padding"
+              style="text-align: right !important"
+            >
+              <ion-icon
+                style="color: #5c6670; font-size: 23px"
+                name="mail"
+              ></ion-icon>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+<!-- #endregion -->

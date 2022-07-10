@@ -1,0 +1,48 @@
+<ion-content>
+  <!-- <div [style.height]="getVhPx(10)">
+  </div> -->
+
+  <div
+    [style.height]="getVhPx(50)"
+    [ngStyle]="{'padding-top': getSubVhPx({main: 50, sub: 15})}"
+    class="imgBack"
+  >
+    <!--  [style.height]="getSubVhPx({main: 40, sub: 20})" -->
+    <div [ngStyle]="{'margin-top': getSubVhPx({main: 30, sub: 40})}">
+      <img
+        src="{{API_URL}}/assets/img/img_bsc_logo.png"
+        width="300"
+        alt=""
+        srcset=""
+      />
+    </div>
+
+    <div [style.height]="getSubVhPx({main: 40, sub: 30})"></div>
+
+    <div [style.height]="getSubVhPx({main: 40, sub: 35})">
+      <img
+        src="{{API_URL}}/assets/img/patrocinador.png"
+        width="200"
+        alt=""
+        srcset=""
+      />
+    </div>
+  </div>
+
+  <div [style.height]="getVhPx(30)">
+    <div [style.height]="getSubVhPx({main: 30, sub: 50})"></div>
+
+    <div [style.height]="getSubVhPx({main: 30, sub: 40})">
+      <img
+        src="{{API_URL}}/assets/img/img_balon_seleccion_splash.gif"
+        width="100"
+        alt=""
+        srcset=""
+      />
+
+      <ion-text *ngIf="showText" color="light">
+        <p>Inicializando</p>
+      </ion-text>
+    </div>
+  </div>
+</ion-content>

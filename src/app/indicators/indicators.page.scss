@@ -1,0 +1,126 @@
+ion-header{
+    --background: #ebf0f3;
+    background-color: #ebf0f3;
+}
+
+// .hydrated{
+//     --background: #ebf0f3;
+//     background-color: #ebf0f3;
+    
+// }
+
+
+ion-toolbar {
+    --background: #ebf0f3;
+    background-color: #ebf0f3;
+    --background: url("/assets/img/img_bsc_header.png") 0 0/100% 100% no-repeat;
+    border-radius: 0 0 20px 20px;
+    // --background: blue;
+}
+
+// ion-toolbar {
+//     border-radius: 0 0 20px 20px;
+//     --background: url("/assets/img/img_bsc_header.png") 0 0/100% 100% no-repeat;
+//     --color: #fff;
+//     color: #fff;
+//     text-align: center;
+// }
+
+// --ion-toolbar-background
+
+ion-header .kb-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ion-header .kb-row .title p{
+    font-weight: 600;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px 30px 10px 0px;
+}
+
+ion-content{
+    --background: #ebf0f3;
+}
+
+ion-content .control{
+    max-width: 550px;
+    text-align:center;
+    margin: auto;
+}
+
+ion-card{
+    border-radius: 12.5px;
+    box-shadow: none;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
+    // box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+ion-card-content{
+	-webkit-padding-start: 0px;
+	padding-inline-start: 0px;
+	-webkit-padding-end: 0px;
+	padding-inline-end: 0px;
+
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+ion-content .kb-row{
+    display: flex;
+    justify-content: space-between;
+    // justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    // color: ;
+
+}
+
+ion-card .kb-row{
+    // padding: 10px 15px;
+    padding: 12px 30px 12px 15px;
+}
+
+ion-card .kb-row.divide{
+    border-bottom: 1px solid #a1a9ac;
+}
+
+ion-card .kb-row.title p{
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+ion-card .kb-row.divisas{
+    background-color: #323f48;
+}
+
+ion-card .kb-row.ipc{
+    background-color: #5c6670;
+}
+
+ion-card .kb-row.norte{
+    background-color: #a1a9ac;
+}
+
+
+ion-card .kb-row p{
+    color:#323f48;
+    font-weight: 600;
+}
+
+ion-card .kb-row .lite{
+    font-weight: 500;
+}
+
+ion-card .kb-row .hide{
+    color: transparent !important;
+    visibility: hidden !important;
+}
+
+ion-content .txtBottom p{
+    color:#323f48;
+    text-align: center;
+}

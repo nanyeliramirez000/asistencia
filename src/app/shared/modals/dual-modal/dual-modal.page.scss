@@ -1,0 +1,428 @@
+ion-grid{
+    height: 100%;
+}
+
+ion-row{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 100%;
+}
+
+ion-card{
+    --background: #ebf0f3;
+    --color: #000;
+    border-radius: 15px 15px 0px 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-bottom: 0px;
+}
+
+ion-card-content{
+	-webkit-padding-start: 0px;
+	padding-inline-start: 0px;
+	-webkit-padding-end: 0px;
+	padding-inline-end: 0px;
+}
+
+ion-button{
+    --background: #5c6670;
+    font-weight: 600;
+    // margin-top: 30px;
+    height: 50px;
+    --border-radius: 10px;
+    --box-shadow:none;
+
+}
+
+ion-grid{
+    padding: 0 !important;
+    margin:  0 !important;
+    padding-bottom: 0 !important;
+    margin-bottom:  0 !important;
+}
+
+ion-col{
+    padding-inline-start: 0px;
+    padding-inline-end: 0px;
+    padding-bottom: 0px
+}
+
+#opts .rrow{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin-bottom: 5px
+}
+
+#opts .rrow-img{
+    padding-top: 2.5px;
+}
+
+#opts .rrow-txt{
+    color: #323f48;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top:3px;
+    margin-left: 3px
+}
+
+ion-card-content .header-img{
+    width: 90px;
+    height: 90px;
+    margin: auto;
+}
+
+// #region LOGIN
+.login .img{
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+
+.login ion-card .title{
+    margin-bottom: 30px
+}
+
+.login ion-card .title p{
+    color:#323f48;
+    font-size: 17px;
+    font-weight: bold
+}
+
+.login ion-card .divide{
+    max-width: 70px;
+    border-bottom: 4px solid #eb0029;
+    margin:auto;
+    margin-bottom: 20px
+}
+
+.login ion-card .first-aviso{
+    padding: 0px 40px
+}
+
+.login ion-card .first-aviso p{
+    color: #323f48;
+    font-size: 15px
+}
+
+.login ion-card .second-aviso p{
+    color: #323f48;
+    font-size: 15px
+}
+
+.login ion-card .btn{
+    padding: 0px 10px;
+    text-transform: none
+}
+// #endregion
+
+// #region REGISTER
+
+.register .back{
+    width: 35px;
+    height: 35px;
+}
+
+.register .img{
+    width: 90px;
+    height: 90px;
+    margin: auto;
+}
+
+.register ion-card .back{
+    text-align: left;
+    cursor: pointer;
+}
+
+.register ion-card .title{
+    margin-bottom: 30px
+}
+
+.register ion-card .title p{
+    color:#323f48;
+    font-size: 17px;
+    font-weight: bold
+}
+
+.register ion-card .divide{
+    max-width: 70px;
+    border-bottom: 4px solid #f5be64;
+    margin:auto;
+    margin-bottom: 20px
+}
+
+.register ion-card .first-aviso{
+    padding: 0px 40px
+}
+
+.register ion-card .first-aviso p{
+    color: #323f48;
+    font-size: 15px
+}
+
+.register ion-card .kbwrow{
+    text-align: left;
+    padding: 0px 20px 40px 40px;
+}
+
+.register ion-card .kbwrow .txt{
+    font-size: 13px;
+    color: #323f48
+}
+
+.register ion-card .second-aviso p{
+    color: #323f48;
+    font-size: 15px;
+    padding: 0px 40px
+}
+
+.register ion-card .btn{
+    padding: 0px 10px;
+    text-transform: none
+}
+// #endregion
+
+// #region CAMERA
+.camera ion-card .back{
+    text-align: left;
+    cursor: pointer;
+}
+
+.camera ion-card .title{
+    margin-bottom: 30px
+}
+
+.camera ion-card .title p{
+    color:#323f48;
+    font-size: 17px;
+    font-weight: bold
+}
+
+.camera ion-card .divide{
+    max-width: 70px;
+    border-bottom: 4px solid #eb0029;
+    margin:auto;
+    margin-bottom: 20px
+}
+
+.camera ion-card .first-aviso{
+    padding: 0px 40px
+}
+
+.camera ion-card .first-aviso p{
+    color: #323f48;
+    font-size: 15px
+}
+
+.camera ion-card .kbwrow{
+    text-align: left;
+    padding: 0px 20px 40px 40px;
+}
+
+.camera ion-card .kbwrow .txt{
+    font-size: 13px;
+    color: #323f48
+}
+
+.camera ion-card .second-aviso p{
+    color: #323f48;
+    font-size: 15px;
+    padding: 0px 40px
+}
+
+.camera ion-card .btn{
+    padding: 0px 10px;
+    text-transform: none
+}
+// #endregion
+
+// #region AVISO CONTACT
+.aviso-contact ion-card .back{
+    text-align: left;
+    cursor: pointer;
+}
+
+.aviso-contact ion-card .title{
+    margin-bottom: 30px
+}
+
+.aviso-contact ion-card .title p{
+    color:#323f48;
+    font-size: 17px;
+    font-weight: bold
+}
+
+.aviso-contact ion-card .divide{
+    max-width: 70px;
+    border-bottom: 5px solid #f5be64;
+    margin:auto;
+    margin-bottom: 20px
+}
+
+.aviso-contact ion-card .first-aviso{
+    padding: 0px 30px
+}
+
+.aviso-contact ion-card .first-aviso p{
+    color: #323f48;
+    font-size: 15px
+}
+
+.aviso-contact ion-card .kbwrow{
+    text-align: center;
+    justify-content: left;
+    align-items: flex-start;
+}
+
+.aviso-contact ion-card .kbwrow .txt{
+    font-size: 13px;
+    color: #323f48
+}
+
+.aviso-contact ion-card .second-aviso p{
+    color: #323f48;
+    font-size: 15px;
+    padding: 0px 40px
+}
+
+.aviso-contact ion-card .btn{
+    padding: 0px 10px;
+    text-transform: none
+}
+
+.invisible{
+    visibility: hidden !important;
+    color: transparent !important;
+}
+// #endregion
+
+// #region AVISO CARD
+.aviso-card ion-card .back{
+    text-align: left;
+    cursor: pointer;
+}
+
+.aviso-card ion-card .title{
+    margin-bottom: 30px
+}
+
+.aviso-card ion-card .title p{
+    color:#323f48;
+    font-size: 17px;
+    font-weight: bold
+}
+
+.aviso-card ion-card .divide{
+    max-width: 70px;
+    border-bottom: 5px solid #f5be64;
+    margin:auto;
+    margin-bottom: 20px
+}
+
+.aviso-card ion-card .first-aviso{
+    padding: 0px 30px
+}
+
+.aviso-card ion-card .first-aviso p{
+    color: #323f48;
+    font-size: 15px
+}
+
+.aviso-card ion-card .kbwrow{
+    text-align: center;
+    justify-content: left;
+    align-items: flex-start;
+}
+
+.aviso-card ion-card .kbwrow .txt{
+    font-size: 13px;
+    color: #323f48
+}
+
+.aviso-card ion-card .second-aviso p{
+    color: #323f48;
+    font-size: 15px;
+    padding: 0px 40px
+}
+
+.aviso-card ion-card .btn{
+    padding: 0px 10px;
+    text-transform: none
+}
+
+.invisible{
+    visibility: hidden !important;
+    color: transparent !important;
+}
+
+.aviso-card #opts .rrow-img{
+    padding-top: 1px;
+}
+
+// #endregion
+
+// #region SUCCESS
+.success .back{
+    width: 35px;
+    height: 35px;
+}
+
+.success .img{
+    width: 60px;
+    height: 60px;
+    margin: auto;
+}
+
+.success ion-card .back{
+    text-align: left;
+    cursor: pointer;
+}
+
+.success ion-card .title{
+    margin-bottom: 30px
+}
+
+.success ion-card .title p{
+    color:#323f48;
+    font-size: 17px;
+    font-weight: bold
+}
+
+.success ion-card .divide{
+    max-width: 70px;
+    border-bottom: 4px solid #1ed688;
+    margin:auto;
+    margin-bottom: 20px
+}
+
+.success ion-card .first-aviso{
+    padding: 0px 40px
+}
+
+.success ion-card .first-aviso p{
+    color: #323f48;
+    font-size: 15px
+}
+
+.success ion-card .kbwrow{
+    text-align: left;
+    padding: 0px 20px 40px 40px;
+}
+
+.success ion-card .kbwrow .txt{
+    font-size: 13px;
+    color: #323f48
+}
+
+.success ion-card .second-aviso p{
+    color: #323f48;
+    font-size: 15px;
+    padding: 0px 40px
+}
+
+.success ion-card .btn{
+    padding: 0px 10px;
+    text-transform: none
+}
+// #endregion

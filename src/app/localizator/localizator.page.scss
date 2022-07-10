@@ -1,0 +1,77 @@
+ion-header{
+    --background: #ebf0f3;
+    background-color: #ebf0f3;
+}
+
+ion-toolbar {
+    --background: #ebf0f3;
+    background-color: #ebf0f3;
+    --background: url("/assets/img/img_bsc_header.png") 0 0/100% 100% no-repeat;
+    border-radius: 0 0 20px 20px;
+}
+
+ion-header .kb-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ion-header .kb-row .title p{
+    font-weight: 600;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px 30px 10px 0px;
+}
+
+ion-content{
+    --background: #ebf0f3;
+}
+
+ion-content .control{
+    max-width: 550px;
+    text-align:center;
+    margin: auto;
+}
+
+ion-grid{
+    height: 100%;
+}
+ion-row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+ion-card-content.aviso{
+	-webkit-padding-start: 12px;
+	padding-inline-start: 12px;
+	-webkit-padding-end: 12px;
+	padding-inline-end: 12px;
+}
+
+ion-card{
+    --background: #ebf0f3;
+    --color: #000;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    // border-radius: 15px 15px 0px 0px;
+    box-shadow: none;
+    margin-bottom: 0px
+}
+
+ion-card-content{
+    -webkit-padding-start: 12px;
+    padding-inline-start: 12px;
+    -webkit-padding-end: 12px;
+    padding-inline-end: 12px;
+}
+  
+ion-button{
+  --background: #b6bbbd;
+  margin-top: 30px;
+  height: 60px;
+  --border-radius: 10px;
+  --box-shadow:none;
+  text-transform: capitalize;
+}

